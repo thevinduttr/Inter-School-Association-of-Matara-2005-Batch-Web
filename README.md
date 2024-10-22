@@ -3,6 +3,7 @@
 Welcome to the development repository for the Inter School Association of Matara (2005) Batch website! 🎉 This platform is designed to reconnect and engage our alumni, offering an easy and beautiful way to stay connected, share memories, and celebrate our journey. 💫
 
 Key Features:
+
 📅 Event Hub – Stay in the loop with all reunions, meetups, and exclusive gatherings. Easily register and share your experiences through this comprehensive event management system.
 🎓 Programs & Initiatives – Get involved in batch-led programs and charitable events that make an impact while fostering a sense of community. 🤝
 🌐 Alumni Network – Connect with batchmates through a dynamic directory that enhances both social and professional networking.
