@@ -33,6 +33,9 @@
   }
 }
 
+/* src/index.css or your main CSS file */
+@import '~react-quill/dist/quill.snow.css';
+
 .card {
   padding: 2em;
 }

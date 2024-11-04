@@ -8,12 +8,12 @@ import ProjectGallery from './components/ProjectGallery';
 function App() {
     return (
         <Router>
-            <div style={{ display: 'flex' }}>
+            <div className="flex min-h-screen bg-gray-100">
                 {/* Sidebar Component */}
                 <Sidebar />
 
                 {/* Main Content */}
-                <main style={styles.content}>
+                <main className="flex-1 p-6 bg-white shadow-lg rounded-md m-4">
                     <Routes>
                         <Route path="/gallery" element={<GalleryManager />} />
                         <Route path="/projects" element={<ProjectGallery />} />
@@ -25,12 +25,5 @@ function App() {
         </Router>
     );
 }
-
-const styles = {
-    content: {
-        padding: '20px',
-        flex: 1,
-    },
-};
 
 export default App;

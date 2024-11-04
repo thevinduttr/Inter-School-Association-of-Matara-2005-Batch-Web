@@ -23,10 +23,10 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + path.extname(file.originalname));
     },
 });
-const upload = multer({ storage });
+const upload = multer({ storage }).array('images');
 
 // Routes
-router.post('/add-image', upload.single('image'), addImage);
+router.post('/add-image', upload, addImage);
 router.get('/:title', getGalleryByTitle);
 router.delete('/:title/:imageId', deleteImage);
 router.delete('/:title', deleteGallery);

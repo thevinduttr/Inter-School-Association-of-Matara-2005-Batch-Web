@@ -1,44 +1,34 @@
 // src/components/Sidebar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaImages, FaProjectDiagram } from 'react-icons/fa'; // Importing icons from react-icons
 
 const Sidebar = () => {
     return (
-        <nav style={styles.sidebar}>
-            <h2>Admin Panel</h2>
-            <ul style={styles.navList}>
-                <li style={styles.navItem}>
-                    <Link to="/gallery" style={styles.navLink}>Gallery</Link>
+        <nav className="w-64 bg-gray-800 text-white min-h-screen p-6 shadow-lg">
+            <h2 className="text-3xl font-bold mb-8 text-center">Admin Panel</h2>
+            <ul className="space-y-4">
+                <li>
+                    <Link
+                        to="/gallery"
+                        className="flex items-center py-2 px-4 rounded hover:bg-gray-700 transition duration-200"
+                    >
+                        <FaImages className="mr-2" /> {/* Icon for Gallery */}
+                        Gallery
+                    </Link>
                 </li>
-                <li style={styles.navItem}>
-                    <Link to="/projects" style={styles.navLink}>Projects</Link>
+                <li>
+                    <Link
+                        to="/projects"
+                        className="flex items-center py-2 px-4 rounded hover:bg-gray-700 transition duration-200"
+                    >
+                        <FaProjectDiagram className="mr-2" /> {/* Icon for Projects */}
+                        Projects
+                    </Link>
                 </li>
             </ul>
         </nav>
     );
-};
-
-const styles = {
-    sidebar: {
-        width: '200px',
-        background: '#333',
-        color: '#fff',
-        padding: '20px',
-        height: '100vh',
-        boxSizing: 'border-box',
-    },
-    navList: {
-        listStyle: 'none',
-        padding: 0,
-    },
-    navItem: {
-        margin: '10px 0',
-    },
-    navLink: {
-        color: '#fff',
-        textDecoration: 'none',
-        fontSize: '18px',
-    },
 };
 
 export default Sidebar;

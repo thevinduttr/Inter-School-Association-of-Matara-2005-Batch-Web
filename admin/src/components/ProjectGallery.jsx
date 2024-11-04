@@ -8,6 +8,8 @@ const ProjectGallery = () => {
     const [newProject, setNewProject] = useState({ title: '', details: '', date: '' });
     const [file, setFile] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
 
     // Fetch all projects
     useEffect(() => {
@@ -15,11 +17,14 @@ const ProjectGallery = () => {
     }, []);
 
     const fetchProjects = async () => {
+        setLoading(true);
         try {
             const { data } = await getProjects();
             setProjects(data);
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -64,16 +69,11 @@ const ProjectGallery = () => {
         try {
             const { data } = await getProjectById(id);
             setSelectedProject(data);
+            setNewProject({ title: data.title, details: data.details, date: data.date.split('T')[0] });
+            setIsEditing(true); // Set editing mode
         } catch (error) {
             console.error(error);
         }
-    };
-
-    // Set project for editing
-    const handleEdit = (project) => {
-        setNewProject({ title: project.title, details: project.details, date: project.date.split('T')[0] });
-        setSelectedProject(project);
-        setIsEditing(true);
     };
 
     // Delete a project
@@ -89,25 +89,28 @@ const ProjectGallery = () => {
     };
 
     return (
-        <div>
-            <h1>Project Gallery Admin Panel</h1>
-            
+        <div className="container mx-auto p-6">
+            <h1 className="text-4xl font-bold mb-6 text-gray-800">Project Gallery Admin Panel</h1>
+
             {/* Project Form */}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="mb-8 p-6 bg-white rounded-lg shadow-lg space-y-4 border border-gray-300">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-700">{isEditing ? 'Edit Project' : 'Add Project'}</h2>
                 <input
                     type="text"
                     name="title"
-                    placeholder="Title"
+                    placeholder="Project Title"
                     value={newProject.title}
                     onChange={handleChange}
                     required
+                    className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
                 <textarea
                     name="details"
-                    placeholder="Details"
+                    placeholder="Project Details"
                     value={newProject.details}
                     onChange={handleChange}
                     required
+                    className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
                 <input
                     type="date"
@@ -115,34 +118,68 @@ const ProjectGallery = () => {
                     value={newProject.date}
                     onChange={handleChange}
                     required
+                    className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
-                <input type="file" onChange={handleFileChange} />
-                <button type="submit">{isEditing ? 'Update Project' : 'Add Project'}</button>
+                <input
+                    type="file"
+                    onChange={handleFileChange}
+                    className="w-full border border-gray-300 rounded mb-4"
+                />
+                <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition duration-200">
+                    {isEditing ? 'Update Project' : 'Add Project'}
+                </button>
             </form>
 
-            {/* Project List */}
-            <h2>Projects</h2>
-            <ul>
-                {projects.map((project) => (
-                    <li key={project._id} onClick={() => handleProjectClick(project._id)}>
-                        <img src={`http://localhost:5000${project.imageUrl}`} alt={project.title} width="100" />
-                        <h3>{project.title}</h3>
-                        <p>{new Date(project.date).toLocaleDateString()}</p>
-                        <button onClick={() => handleEdit(project)}>Edit</button>
-                        <button onClick={() => handleDelete(project._id)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+            {/* Projects Table */}
+            <h2 className="text-3xl font-semibold mb-4 text-gray-800">Projects</h2>
+            {loading ? (
+                <p className="text-blue-500">Loading projects...</p>
+            ) : (
+                <div className="overflow-x-auto">
+                    <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+                        <thead>
+                            <tr className="bg-gray-800 text-white">
+                                <th className="py-3 px-4 text-left">Title</th>
+                                <th className="py-3 px-4 text-left">Date</th>
+                                <th className="py-3 px-4 text-left">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {projects.map((project) => (
+                                <tr key={project._id} className="border-b hover:bg-gray-100">
+                                    <td className="py-2 px-4">{project.title}</td>
+                                    <td className="py-2 px-4">{new Date(project.date).toLocaleDateString()}</td>
+                                    <td className="py-2 px-4">
+                                        <button
+                                            onClick={() => handleProjectClick(project._id)}
+                                            className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600 transition duration-200 mr-2"
+                                        >
+                                            View
+                                        </button>
+                                        <button
+                                            onClick={() => handleDelete(project._id)}
+                                            className="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700 transition duration-200"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
 
             {/* Selected Project Details */}
             {selectedProject && (
-                <div>
-                    <h2>Project Details</h2>
-                    <img src={`http://localhost:5000${selectedProject.imageUrl}`} alt={selectedProject.title} width="300" />
-                    <h3>{selectedProject.title}</h3>
-                    <p>{selectedProject.details}</p>
-                    <p>{new Date(selectedProject.date).toLocaleDateString()}</p>
-                    <button onClick={() => handleDelete(selectedProject._id)}>Delete Project</button>
+                <div className="mt-8 p-4 bg-white rounded-lg shadow-lg">
+                    <h2 className="text-2xl font-bold mb-4 text-gray-800">{selectedProject.title}</h2>
+                    {selectedProject.imageUrl && (
+                        <img src={`http://localhost:5000${selectedProject.imageUrl}`} alt={selectedProject.title} className="w-full h-48 object-cover rounded mb-4" />
+                    )}
+                    <p className="text-gray-700 mb-2">{selectedProject.details}</p>
+                    <p className="text-gray-600 mb-4">{new Date(selectedProject.date).toLocaleDateString()}</p>
+                    <button onClick={() => handleDelete(selectedProject._id)} className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-200">Delete Project</button>
                 </div>
             )}
         </div>

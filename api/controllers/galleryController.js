@@ -6,18 +6,20 @@ const path = require('path');
 exports.addImage = async (req, res) => {
     try {
         const { title } = req.body;
-        const image = req.file;
 
         let gallery = await Gallery.findOne({ title });
         if (!gallery) {
             gallery = new Gallery({ title, images: [] });
         }
 
-        const imagePath = `/uploads/${title}/${image.filename}`;
-        gallery.images.push({ url: imagePath, title });
+        // Iterate over the uploaded files
+        req.files.forEach(image => {
+            const imagePath = `/uploads/${title}/${image.filename}`;
+            gallery.images.push({ url: imagePath, title });
+        });
 
         await gallery.save();
-        res.status(200).json({ message: 'Image added to gallery', gallery });
+        res.status(200).json({ message: 'Images added to gallery', gallery });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
