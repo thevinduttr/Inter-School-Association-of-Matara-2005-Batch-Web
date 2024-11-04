@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
 import ClientGallery from './components/ClientGallery';
 import ClientProjects from './components/ClientProjects';
 import AboutUs from './components/AboutUs';
@@ -22,7 +23,7 @@ function App() {
                         <Route path="/projects" element={<ClientProjects />} />
                         <Route path="/contact" element={<ContactUs />} />
                         <Route path="/about" element={<AboutUs />} />
-                        <Route path="*" element={<ClientGallery />} /> {/* Default route */}
+                        <Route path="*" element={<LandingPage />} /> {/* Default route */}
                     </Routes>
                 </main>
 
