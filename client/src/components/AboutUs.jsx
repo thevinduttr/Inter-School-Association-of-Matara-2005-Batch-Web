@@ -79,7 +79,7 @@ const AboutUs = () => {
             </div>
 
             {/* Who We Are Section */}
-            <section className="py-16 bg-white text-center">
+            <section className="py-16 text-center bg-white">
                 <h2 className="mb-6 text-4xl font-semibold text-purple-600">Who We Are</h2>
                 <div className="flex flex-col items-center max-w-6xl p-4 mx-auto lg:flex-row lg:items-center lg:space-x-8">
                     <img className="w-[400px] h-[380px] mx-auto lg:mx-0 lg:w-[350px] lg:h-[350px] rounded-lg shadow-lg" src={img1} alt="Logo" />
@@ -98,17 +98,17 @@ const AboutUs = () => {
 
             {/* Vision and Mission Section */}
             <section className="py-16 bg-gray-100">
-                <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:space-x-8 px-6">
+                <div className="flex flex-col max-w-6xl px-6 mx-auto lg:flex-row lg:space-x-8">
                     <div className="w-full lg:w-1/2">
-                        <h2 className="text-4xl font-semibold text-purple-500 mb-4">Our Vision</h2>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                            "To create a strong community of past students who support each other and give back to their schools, helping future generations succeed."
+                        <h2 className="mb-4 text-4xl font-semibold text-purple-500">Our Vision</h2>
+                        <p className="text-lg leading-relaxed text-gray-700">
+                            To create a strong community of past students who support each other and give back to their schools, helping future generations succeed.
                         </p>
                     </div>
-                    <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-                        <h2 className="text-4xl font-semibold text-indigo-500 mb-4">Our Mission</h2>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                            "To connect alumni and offer support through mentorship, career guidance, and networking. We aim to give back to our schools with financial help, improved facilities, and scholarships, ensuring they remain great places for learning."
+                    <div className="w-full mt-8 lg:w-1/2 lg:mt-0">
+                        <h2 className="mb-4 text-4xl font-semibold text-indigo-500">Our Mission</h2>
+                        <p className="text-lg leading-relaxed text-gray-700">
+                            To connect alumni and offer support through mentorship, career guidance, and networking. We aim to give back to our schools with financial help, improved facilities, and scholarships, ensuring they remain great places for learning.
                         </p>
                     </div>
                 </div>
@@ -117,31 +117,31 @@ const AboutUs = () => {
             {/* What We Do Section */}
             <section className="py-16 bg-white">
                 <h2 className="mb-6 text-4xl font-semibold text-center text-indigo-500">What We Do</h2>
-                <div className="grid grid-cols-1 gap-8 text-center sm:grid-cols-2 lg:grid-cols-4 px-6 max-w-6xl mx-auto">
-                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                <div className="grid max-w-6xl grid-cols-1 gap-8 px-6 mx-auto text-center sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="p-6 transition-transform shadow-lg bg-gray-50 rounded-2xl hover:scale-105">
                         <FaLaptopCode className="mx-auto mb-4 text-5xl text-purple-400" />
-                        <h3 className="mb-2 text-xl font-bold text-gray-800">Development</h3>
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Protecting the Environment</h3>
                         <p className="text-gray-600">
                             We provide cutting-edge software development solutions to address complex business needs.
                         </p>
                     </div>
-                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                    <div className="p-6 transition-transform shadow-lg bg-gray-50 rounded-2xl hover:scale-105">
                         <FaPeopleCarry className="mx-auto mb-4 text-5xl text-indigo-400" />
-                        <h3 className="mb-2 text-xl font-bold text-gray-800">Consulting</h3>
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Promoting Education</h3>
                         <p className="text-gray-600">
                             Our consulting services ensure that your organization can overcome any challenges.
                         </p>
                     </div>
-                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                    <div className="p-6 transition-transform shadow-lg bg-gray-50 rounded-2xl hover:scale-105">
                         <FaBullhorn className="mx-auto mb-4 text-5xl text-pink-400" />
-                        <h3 className="mb-2 text-xl font-bold text-gray-800">Marketing</h3>
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Funding Research and Innovation</h3>
                         <p className="text-gray-600">
                             We create impactful marketing strategies to grow your brand and reach a wider audience.
                         </p>
                     </div>
-                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                    <div className="p-6 transition-transform shadow-lg bg-gray-50 rounded-2xl hover:scale-105">
                         <FaRegSmileBeam className="mx-auto mb-4 text-5xl text-green-400" />
-                        <h3 className="mb-2 text-xl font-bold text-gray-800">Support</h3>
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Supporting Health and Wellness</h3>
                         <p className="text-gray-600">
                             Our team provides dedicated support to ensure seamless service for our clients.
                         </p>
@@ -150,9 +150,9 @@ const AboutUs = () => {
             </section>
 
             {/* Our Team Section */}
-            <section className="py-16 bg-gray-100 text-center">
+            <section className="py-16 text-center bg-gray-100">
                 <h2 className="mb-10 text-4xl font-semibold text-yellow-500">Our Team</h2>
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 px-6 max-w-6xl mx-auto">
+                <div className="grid max-w-6xl grid-cols-1 gap-8 px-6 mx-auto sm:grid-cols-2 lg:grid-cols-4">
                     {teamMembers.map((member) => (
                         <div
                             key={member.id}
@@ -174,7 +174,7 @@ const AboutUs = () => {
             {/* Modal for Team Member Details */}
             {selectedMember && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-                    <div className="relative w-11/12 p-8 bg-white rounded-2xl sm:w-96 shadow-2xl">
+                    <div className="relative w-11/12 p-8 bg-white shadow-2xl rounded-2xl sm:w-96">
                         <button
                             className="absolute text-2xl text-gray-400 top-4 right-4 hover:text-gray-600"
                             onClick={closeModal}

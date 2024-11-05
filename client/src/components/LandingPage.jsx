@@ -13,26 +13,30 @@ import Modal from 'react-modal';
 import heroImage from '../assets/banner1.jpg';
 import visionImage from '../assets/vision.png';
 import missionImage from '../assets/misson.png';
-import qrCodeImage from '../assets/school_logo_01.png';
-import schoolLogo1 from '../assets/school_logo_01.png';
+import qrCodeImage from '../assets/qr.webp';
+import schoolLogo1 from '../assets/central.jpg';
 import schoolLogo2 from '../assets/school_logo_02.png';
 import schoolLogo3 from '../assets/school_logo_01.png';
-import schoolLogo4 from '../assets/school_logo_01.png';
-import schoolLogo5 from '../assets/school_logo_01.png';
-import schoolLogo6 from '../assets/school_logo_01.png';
-import schoolLogo7 from '../assets/school_logo_01.png';
+import schoolLogo4 from '../assets/sujatha.png';
+import schoolLogo5 from '../assets/servatius.jpg';
+import schoolLogo6 from '../assets/covent.webp';
+import schoolLogo7 from '../assets/girls.jpg';
+import img1 from "../assets/img13.jpg"
+import img2 from "../assets/img16.jpg"
+import img3 from "../assets/img2.jpg"
+import img4 from "../assets/img5.jpg"
 
 Modal.setAppElement('#root'); // Accessibility setting for react-modal
 
 const LandingPage = () => {
     const [schools] = useState([
         { id: 1, name: 'Matara Central College', logoUrl: schoolLogo1, description: 'An institution known for excellence.', anthemUrl: '/path/to/anthem1.mp3' },
-        { id: 2, name: 'St. Thomas College', logoUrl: schoolLogo2, description: 'Educating tomorrow’s leaders.', anthemUrl: '/path/to/anthem2.mp3' },
+        { id: 2, name: 'St. Thomas College Matara', logoUrl: schoolLogo2, description: 'Educating tomorrow’s leaders.', anthemUrl: '/path/to/anthem2.mp3' },
         { id: 3, name: 'Rahula College', logoUrl: schoolLogo3, description: 'Striving for greatness in all fields.', anthemUrl: '/path/to/anthem3.mp3' },
         { id: 4, name: 'Sujatha Vidyalaya', logoUrl: schoolLogo4, description: 'Empowering young minds.', anthemUrl: '/path/to/anthem4.mp3' },
-        { id: 5, name: 'Matara Science College', logoUrl: schoolLogo5, description: 'Science and innovation for a brighter future.', anthemUrl: '/path/to/anthem5.mp3' },
+        { id: 5, name: 'St.servatius collegeMatara', logoUrl: schoolLogo5, description: 'Science and innovation for a brighter future.', anthemUrl: '/path/to/anthem5.mp3' },
         { id: 6, name: 'St. Mary’s College', logoUrl: schoolLogo6, description: 'Faith, learning, and leadership.', anthemUrl: '/path/to/anthem6.mp3' },
-        { id: 7, name: 'Matara Girls’ High School', logoUrl: schoolLogo7, description: 'Inspiring young women to achieve greatness.', anthemUrl: '/path/to/anthem7.mp3' },
+        { id: 7, name: 'St thomas girls high school matara', logoUrl: schoolLogo7, description: 'Inspiring young women to achieve greatness.', anthemUrl: '/path/to/anthem7.mp3' },
     ]);
 
     const [projects, setProjects] = useState([]);
@@ -96,41 +100,41 @@ const LandingPage = () => {
     return (
         <div className="min-h-screen text-white">
             {/* Hero Section */}
-            <section className="relative bg-cover bg-center h-screen" style={{ backgroundImage: `url(${heroImage})` }}>
-                <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
-                    <div className="text-center px-4 md:px-10 lg:px-20">
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">Inter School Association - Matara 2005 Batch</h1>
-                        <p className="text-lg md:text-2xl text-gray-300 mb-8">Connecting the Batch of 2005 across Schools in Matara</p>
-                        <Link to="/register" className="px-6 py-3 bg-white text-black font-semibold rounded-lg text-lg hover:bg-gray-300 transition">Join Us</Link>
+            <section className="relative h-screen bg-center bg-cover" style={{ backgroundImage: `url(${heroImage})` }}>
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70">
+                    <div className="px-4 text-center md:px-10 lg:px-20">
+                        <h1 className="mb-6 text-5xl font-bold text-white md:text-7xl drop-shadow-lg">Inter School Association - Matara 2005 Batch</h1>
+                        <p className="mb-8 text-lg text-gray-300 md:text-2xl">Connecting the Batch of 2005 across Schools in Matara</p>
+                        <Link to="/register" className="px-6 py-3 text-lg font-semibold text-black transition bg-white rounded-lg hover:bg-gray-300">Join Us</Link>
                     </div>
                 </div>
             </section>
 
             {/* Count Row Section (White) */}
-            <section className="container mx-auto px-4 py-10 bg-white text-black">
+            <section className="container px-4 py-10 mx-auto text-black bg-white">
                 <Slide direction="up" triggerOnce>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
                         <div className="p-4">
-                            <FaSchool className="text-gray-700 text-4xl mx-auto mb-3" />
+                            <FaSchool className="mx-auto mb-3 text-4xl text-gray-700" />
                             <p className="text-lg font-semibold">Batch Year</p>
                             <p className="text-3xl font-bold">2005</p>
                         </div>
                         <div className="p-4">
-                            <FaUsers className="text-gray-700 text-4xl mx-auto mb-3" />
+                            <FaUsers className="mx-auto mb-3 text-4xl text-gray-700" />
                             <p className="text-lg font-semibold">Members</p>
                             <p className="text-3xl font-bold">
                                 <CountUp end={50} duration={3} />+
                             </p>
                         </div>
                         <div className="p-4">
-                            <FaSchool className="text-gray-700 text-4xl mx-auto mb-3" />
+                            <FaSchool className="mx-auto mb-3 text-4xl text-gray-700" />
                             <p className="text-lg font-semibold">Schools</p>
                             <p className="text-3xl font-bold">
                                 <CountUp end={15} duration={3} />+
                             </p>
                         </div>
                         <div className="p-4">
-                            <FaCalendarAlt className="text-gray-700 text-4xl mx-auto mb-3" />
+                            <FaCalendarAlt className="mx-auto mb-3 text-4xl text-gray-700" />
                             <p className="text-lg font-semibold">Events</p>
                             <p className="text-3xl font-bold">
                                 <CountUp end={20} duration={3} />+
@@ -141,20 +145,20 @@ const LandingPage = () => {
             </section>
 
             {/* Registered Schools Section (Black) */}
-            <section className="container mx-auto px-4 py-16 bg-gray-900">
-                <h2 className="text-4xl font-bold text-center mb-5 text-white">Registered Schools</h2>
-                <hr className="w-24 mx-auto border-b-4 border-purple-600 mb-8" />
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+            <section className="container px-4 py-16 mx-auto bg-gray-900">
+                <h2 className="mb-5 text-4xl font-bold text-center text-white">Registered Schools</h2>
+                <hr className="w-24 mx-auto mb-8 border-b-4 border-purple-600" />
+                <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
                     {schools.map((school) => (
                         <div 
                             key={school.id} 
-                            className="bg-gray-100 text-black rounded-lg p-5 shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer"
+                            className="p-5 text-black transition-all duration-300 transform bg-gray-100 rounded-lg shadow-md cursor-pointer hover:shadow-lg hover:scale-105"
                             onClick={() => openModal(school)}
                         >
                             <div className="flex flex-col items-center justify-center h-full">
-                                <img src={school.logoUrl} alt={school.name} className="w-20 h-20 mb-4 rounded-full object-cover" />
-                                <h3 className="text-xl font-semibold mb-2">{school.name}</h3>
-                                <p className="text-sm text-gray-600 leading-tight">Learn more about our esteemed alumni network.</p>
+                                <img src={school.logoUrl} alt={school.name} className="object-cover w-20 h-20 mb-4 rounded-full" />
+                                <h3 className="mb-2 text-xl font-semibold">{school.name}</h3>
+                                <p className="text-sm leading-tight text-gray-600">Learn more about our esteemed alumni network.</p>
                             </div>
                         </div>
                     ))}
@@ -163,74 +167,77 @@ const LandingPage = () => {
 
 
             {/* Vision Section (White, Enhanced Layout) */}
-            <section className="container mx-auto px-4 py-20 bg-white text-black relative overflow-hidden">
-                <h2 className="text-4xl font-bold text-center mb-8">Our Vision</h2>
-                <hr className="w-24 mx-auto border-b-4 border-gray-500 mb-12" />
-                <div className="flex flex-col md:flex-row items-center gap-12 md:gap-8 justify-center">
-                    <div className="w-full md:w-1/2 flex justify-center transform hover:scale-105 transition-transform duration-500">
-                        <img src={visionImage} alt="Vision" className="rounded-lg object-cover max-h-80" />
+            <section className="container relative px-4 py-20 mx-auto overflow-hidden text-black bg-white">
+                <h2 className="mb-8 text-4xl font-bold text-center">Our Vision</h2>
+                <hr className="w-24 mx-auto mb-12 border-b-4 border-gray-500" />
+                <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:gap-8">
+                    <div className="flex justify-center w-full transition-transform duration-500 transform md:w-1/2 hover:scale-105">
+                        <img src={visionImage} alt="Vision" className="object-cover rounded-lg max-h-80" />
                     </div>
-                    <div className="w-full md:w-1/2 text-center md:text-left">
-                        <p className="text-xl text-gray-700 max-w-xl mx-auto leading-relaxed">
-                            To build a stronger, more connected community among the 2005 batch alumni, fostering lifelong friendships and collaboration across schools in Matara.
+                    <div className="w-full text-center md:w-1/2 md:text-left">
+                        <p className="max-w-xl mx-auto text-xl leading-relaxed text-gray-700">
+                        To create a strong community of past students who support each other and give back to 
+                        their schools, helping future generations succeed.
                         </p>
                     </div>
                 </div>
                 {/* Decorative Accent */}
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-200 opacity-30 rounded-full blur-xl"></div>
+                <div className="absolute w-40 h-40 bg-purple-200 rounded-full -top-10 -left-10 opacity-30 blur-xl"></div>
             </section>
 
             {/* Mission Section (Black, Enhanced Layout) */}
-            <section className="container mx-auto px-4 py-20 bg-gray-900 text-white relative overflow-hidden">
-                <h2 className="text-4xl font-bold text-center mb-8">Our Mission</h2>
-                <hr className="w-24 mx-auto border-b-4 border-purple-600 mb-12" />
-                <div className="flex flex-col md:flex-row items-center gap-12 md:gap-8 justify-center">
-                    <div className="w-full md:w-1/2 text-center md:text-right order-2 md:order-1">
-                        <p className="text-xl text-gray-300 max-w-xl mx-auto leading-relaxed">
-                            To facilitate events, resources, and networking opportunities for alumni of the 2005 batch, empowering them to achieve personal and professional growth while contributing to society.
+            <section className="container relative px-4 py-20 mx-auto overflow-hidden text-white bg-gray-900">
+                <h2 className="mb-8 text-4xl font-bold text-center">Our Mission</h2>
+                <hr className="w-24 mx-auto mb-12 border-b-4 border-purple-600" />
+                <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:gap-8">
+                    <div className="order-2 w-full text-center md:w-1/2 md:text-right md:order-1">
+                        <p className="max-w-xl mx-auto text-xl leading-relaxed text-center text-gray-300">
+                            To connect alumni and offer support through mentorship, career guidance, and 
+                            networking. We aim to give back to our schools with financial help, improved facilities, and 
+                            scholarships, ensuring they remain great places for learning.
                         </p>
                     </div>
-                    <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2 transform hover:scale-105 transition-transform duration-500">
-                        <img src={missionImage} alt="Mission" className="rounded-lg object-cover max-h-80" />
+                    <div className="flex justify-center order-1 w-full transition-transform duration-500 transform md:w-1/2 md:order-2 hover:scale-105">
+                        <img src={missionImage} alt="Mission" className="object-cover rounded-lg max-h-80" />
                     </div>
                 </div>
                 {/* Decorative Accent */}
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-700 opacity-20 rounded-full blur-xl"></div>
+                <div className="absolute w-40 h-40 bg-purple-700 rounded-full -bottom-10 -right-10 opacity-20 blur-xl"></div>
             </section>
 
 
             {/* Upcoming Events with Images and Countdown (White) */}
-            <section className="container mx-auto px-4 py-16 bg-white text-black">
-                <h2 className="text-4xl font-bold text-center mb-5">Upcoming Events</h2>
-                <hr className="w-24 mx-auto border-b-4 border-gray-500 mb-8" />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <section className="container px-4 py-16 mx-auto text-black bg-white">
+                <h2 className="mb-5 text-4xl font-bold text-center">Upcoming Events</h2>
+                <hr className="w-24 mx-auto mb-8 border-b-4 border-gray-500" />
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {(upcomingEvents.length > 0 ? upcomingEvents : pastEvents.slice(0, 4)).map((event) => (
-                        <div key={event._id} className="bg-gray-100 rounded-lg shadow-lg p-6 text-center transition transform hover:scale-105">
-                            <img src={event.imageUrl} alt={event.title} className="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 className="text-2xl font-semibold mb-3">{event.title}</h3>
-                            <p className="text-lg text-gray-700 mb-4">{event.description}</p>
+                        <div key={event._id} className="p-6 text-center transition transform bg-gray-100 rounded-lg shadow-lg hover:scale-105">
+                            <img src={event.imageUrl} alt={event.title} className="object-cover w-full h-48 mb-4 rounded-md" />
+                            <h3 className="mb-3 text-2xl font-semibold">{event.title}</h3>
+                            <p className="mb-4 text-lg text-gray-700">{event.description}</p>
                             {upcomingEvents.length > 0 && <Countdown date={new Date(event.date)} renderer={renderCountdown} />}
                         </div>
                     ))}
                 </div>
-                <div className="text-center mt-8">
-                    <Link to="/events" className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg text-lg hover:bg-gray-700 transition">View All Events</Link>
+                <div className="mt-8 text-center">
+                    <Link to="/projects" className="px-6 py-3 text-lg font-semibold text-white transition bg-gray-800 rounded-lg hover:bg-gray-700">View All Events</Link>
                 </div>
             </section>
 
             {/* Support Our Association Section (Enhanced Layout) */}
-            <section className="container mx-auto px-4 py-20 bg-gray-900 text-white relative overflow-hidden">
-                <h2 className="text-4xl font-bold text-center mb-8">Support Our Association</h2>
-                <hr className="w-24 mx-auto border-b-4 border-purple-600 mb-12" />
+            <section className="container relative px-4 py-20 mx-auto overflow-hidden text-white bg-gray-900">
+                <h2 className="mb-8 text-4xl font-bold text-center">Support Our Association</h2>
+                <hr className="w-24 mx-auto mb-12 border-b-4 border-purple-600" />
                 
-                <div className="flex flex-col md:flex-row items-center justify-center gap-12 relative z-10 bg-gray-800 p-8 rounded-lg shadow-xl">
+                <div className="relative z-10 flex flex-col items-center justify-center gap-12 p-8 bg-gray-800 rounded-lg shadow-xl md:flex-row">
                     <div className="flex flex-col items-center">
-                        <img src={qrCodeImage} alt="QR Code" className="w-56 h-56 mb-4 shadow-lg rounded-lg transform hover:scale-105 transition-transform" />
-                        <p className="text-center text-gray-400 text-sm">Scan the QR code to donate</p>
+                        <img src={qrCodeImage} alt="QR Code" className="w-56 h-56 mb-4 transition-transform transform rounded-lg shadow-lg hover:scale-105" />
+                        <p className="text-sm text-center text-gray-400">Scan the QR code to donate</p>
                     </div>
                     
-                    <div className="text-lg max-w-md text-gray-300 leading-relaxed">
-                        <h3 className="text-2xl font-bold mb-4 text-purple-500">Bank Transfer Details</h3>
+                    <div className="max-w-md text-lg leading-relaxed text-gray-300">
+                        <h3 className="mb-4 text-2xl font-bold text-purple-500">Bank Transfer Details</h3>
                         <p className="mb-1"><span className="font-semibold text-white">Bank:</span> ABC Bank</p>
                         <p className="mb-1"><span className="font-semibold text-white">Account Name:</span> Inter School Association - Matara 2005 Batch</p>
                         <p className="mb-1"><span className="font-semibold text-white">Account Number:</span> 123456789</p>
@@ -238,58 +245,85 @@ const LandingPage = () => {
                     </div>
                 </div>
                 
-                {/* Decorative Accents */}
-                <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-700 opacity-30 rounded-full blur-2xl"></div>
-                    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-700 opacity-30 rounded-full blur-2xl"></div>
-                </div>
+               
             </section>
 
 
             {/* About & Contact Us Section (Enhanced Layout) */}
-            <section className="container mx-auto px-6 py-20 bg-white text-black relative">
-                <h2 className="text-4xl font-bold text-center mb-10">
+            <section className="container relative px-6 py-20 mx-auto text-black bg-white">
+                <h2 className="mb-10 text-4xl font-bold text-center">
                     About & Contact Us
                 </h2>
-                <hr className="w-24 mx-auto border-b-4 border-gray-500 mb-12" />
+                <hr className="w-24 mx-auto mb-12 border-b-4 border-gray-500" />
                 
-                <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 text-center md:text-left relative z-10">
-                    <div className="md:w-1/2 bg-gray-100 p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105">
-                        <h3 className="text-2xl font-bold mb-4 text-purple-700">About Us</h3>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                <div className="relative z-10 flex flex-col items-center justify-center gap-12 text-center md:flex-row md:gap-16 md:text-left">
+                    <div className="p-8 transition-transform transform bg-gray-100 rounded-lg shadow-lg md:w-1/2 hover:scale-105">
+                        <h3 className="mb-4 text-2xl font-bold text-purple-700">About Us</h3>
+                        <p className="text-lg leading-relaxed text-gray-600">
                             The Inter School Association - Matara 2005 Batch is a platform aimed at connecting alumni from various schools in Matara who graduated in 2005. We organize events, networking sessions, and resources for personal and professional growth.
                         </p>
+                        <div className="flex justify-center">
+                            <Link to="/about">
+                                <button
+                                type="submit"
+                                className="mt-8 w-[150px] py-3 font-semibold text-white transition-all duration-300 transform shadow-md bg-gradient-to-r from-purple-400 to-indigo-400 hover:from-purple-500 hover:to-indigo-500 rounded-xl hover:scale-105"
+                                >
+                                See More
+                                </button>
+                            </Link>
+                        </div>
+
+                       
                     </div>
                     
-                    <div className="md:w-1/2 bg-gray-100 p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105">
-                        <h3 className="text-2xl font-bold mb-4 text-purple-700">Contact Us</h3>
-                        <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                    <div className="p-8 transition-transform transform bg-gray-100 rounded-lg shadow-lg md:w-1/2 hover:scale-105">
+                        <h3 className="mb-4 text-2xl font-bold text-purple-700">Contact Us</h3>
+                        <p className="mb-4 text-lg leading-relaxed text-gray-600">
                             Feel free to reach out to us for any inquiries, collaborations, or support for our association.
                         </p>
-                        <p className="text-gray-600 text-lg">
+                        <p className="text-lg text-gray-600">
                             Email: <a href="mailto:contact@matara2005association.com" className="text-purple-500 hover:underline">contact@matara2005association.com</a>
                         </p>
-                        <p className="text-gray-600 text-lg">
+                        <p className="text-lg text-gray-600">
                             Phone: <a href="tel:+94123456789" className="text-purple-500 hover:underline">+94 123 456 789</a>
                         </p>
+
+                        <div className="flex justify-center">
+                            <Link to="/contact">
+                                <button
+                                type="submit"
+                                className="mt-8 w-[150px] py-3 font-semibold text-white transition-all duration-300 transform shadow-md bg-gradient-to-r from-purple-400 to-indigo-400 hover:from-purple-500 hover:to-indigo-500 rounded-xl hover:scale-105"
+                                >
+                                See More
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 
-                {/* Decorative Background Accents */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-10 left-0 w-1/3 h-1/3 bg-purple-200 rounded-full opacity-50 -translate-x-10 -translate-y-10"></div>
-                    <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-purple-300 rounded-full opacity-50 translate-x-10 translate-y-10"></div>
-                </div>
             </section>
 
             {/* Gallery Preview (White) */}
-            <section className="container mx-auto px-4 py-16 bg-white text-black">
-                <h2 className="text-4xl font-bold text-center mb-5">Gallery</h2>
-                <hr className="w-24 mx-auto border-b-4 border-gray-500 mb-8" />
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {galleryImages.map((img) => (
-                        <img key={img._id} src={img.url} alt="Gallery" className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer" onClick={() => window.location.href = '/gallery'} />
-                    ))}
+            <section className="container px-4 py-16 mx-auto text-black bg-white">
+                <h2 className="mb-5 text-4xl font-bold text-center">Gallery</h2>
+                <hr className="w-24 mx-auto mb-8 border-b-4 border-gray-500" />
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                    <Link to="/gallery">
+                        <img className="object-cover w-full transition-transform rounded-lg cursor-pointer h-[330px] hover:scale-105" src={img1} alt="" />
+                    </Link>
+                    <Link to="/gallery">
+                        <img className="object-cover w-full transition-transform rounded-lg cursor-pointer h-[330px] hover:scale-105" src={img2} alt="" />
+                    </Link>
+                    <Link to="/gallery">
+                        <img className="object-cover w-full transition-transform rounded-lg cursor-pointer h-[330px] hover:scale-105" src={img3} alt="" />
+                    </Link>
+                    <Link to="/gallery">
+                        <img className="object-cover w-full transition-transform rounded-lg cursor-pointer h-[330px] hover:scale-105" src={img4} alt="" />
+                    </Link>
+                </div>
+
+                <div className="mt-8 text-center">
+                    <Link to="/gallery" className="px-6 py-3 text-lg font-semibold text-white transition bg-gray-800 rounded-lg hover:bg-gray-700">View Gallery</Link>
                 </div>
             </section>
 
@@ -299,15 +333,15 @@ const LandingPage = () => {
                     isOpen={isModalOpen}
                     onRequestClose={closeModal}
                     contentLabel="School Details"
-                    className="bg-gray-900 text-gray-100 rounded-lg p-8 w-11/12 max-w-3xl mx-auto mt-20 shadow-2xl"
+                    className="w-11/12 max-w-3xl p-8 mx-auto mt-20 text-gray-100 bg-gray-900 rounded-lg shadow-2xl"
                     overlayClassName="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center"
                 >
-                    <button onClick={closeModal} className="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-2xl">
+                    <button onClick={closeModal} className="absolute text-2xl text-gray-400 top-4 right-4 hover:text-gray-200">
                         <FaTimes />
                     </button>
-                    <h2 className="text-4xl font-bold text-center mb-4">{selectedSchool.name}</h2>
-                    <hr className="w-16 mx-auto border-b-4 border-purple-600 mb-4" />
-                    <p className="text-lg text-center mb-6">{selectedSchool.description}</p>
+                    <h2 className="mb-4 text-4xl font-bold text-center">{selectedSchool.name}</h2>
+                    <hr className="w-16 mx-auto mb-4 border-b-4 border-purple-600" />
+                    <p className="mb-6 text-lg text-center">{selectedSchool.description}</p>
                     <audio controls className="mx-auto">
                         <source src={selectedSchool.anthemUrl} type="audio/mpeg" />
                         Your browser does not support the audio element.
