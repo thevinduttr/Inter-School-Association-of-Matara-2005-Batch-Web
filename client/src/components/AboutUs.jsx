@@ -7,6 +7,7 @@ import teamImage2 from '../assets/member2.jpg';
 import teamImage3 from '../assets/member3.jpg';
 import teamImage4 from '../assets/member4.jpg';
 import workImage from '../assets/member4.jpg';
+import img1 from "../assets/logo.jpg";
 
 const teamMembers = [
     {
@@ -58,11 +59,11 @@ const AboutUs = () => {
     const closeModal = () => setSelectedMember(null);
 
     return (
-        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen text-gray-100">
+        <div className="min-h-screen text-gray-800">
             {/* Hero Section */}
-            <div className="relative h-72 md:h-96 overflow-hidden">
+            <div className="relative overflow-hidden h-72 md:h-96">
                 <div
-                    className="absolute inset-0 transform scale-110 transition-transform duration-500 ease-out"
+                    className="absolute inset-0 transition-transform duration-500 ease-out transform scale-110"
                     style={{
                         backgroundImage: `url(${contactBanner})`,
                         backgroundSize: 'cover',
@@ -70,114 +71,101 @@ const AboutUs = () => {
                         filter: 'blur(10px)',
                     }}
                 ></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-800 via-indigo-800 to-blue-900 opacity-80"></div>
-                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center space-y-2">
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">About Us</h1>
-                    <p className="text-gray-300 text-base md:text-lg tracking-wider">Home / About Us</p>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-300 via-indigo-200 to-blue-200 opacity-80"></div>
+                <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-2 text-center">
+                    <h1 className="text-5xl font-extrabold text-gray-800 md:text-6xl drop-shadow-lg">About Us</h1>
+                    <p className="text-base tracking-wider text-gray-600 md:text-lg">Home / About Us</p>
                 </div>
             </div>
 
             {/* Who We Are Section */}
-            <section className="text-center mb-16 mt-16">
-                <h2 className="text-4xl font-semibold text-purple-500 mb-6">Who We Are</h2>
-                <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    We are a team of dedicated professionals with a passion for technology and innovation. Our mission is
-                    to provide solutions that empower businesses and drive growth. With expertise across a range of
-                    industries, we work closely with our clients to ensure their success.
-                </p>
+            <section className="py-16 bg-white text-center">
+                <h2 className="mb-6 text-4xl font-semibold text-purple-600">Who We Are</h2>
+                <div className="flex flex-col items-center max-w-6xl p-4 mx-auto lg:flex-row lg:items-center lg:space-x-8">
+                    <img className="w-[400px] h-[380px] mx-auto lg:mx-0 lg:w-[350px] lg:h-[350px] rounded-lg shadow-lg" src={img1} alt="Logo" />
+                    <p className="max-w-4xl mx-auto mt-6 text-lg leading-relaxed text-gray-700 lg:mt-0">
+                        Shared goal: to strengthen connections, support their former schools, and uphold the values of their education.
+                        <br />
+                        The association’s primary objective is to build a supportive network for professional growth, mentorship, and the exchange of knowledge among its members.
+                        This community fosters collaboration and career guidance, enriching members’ personal and professional lives.
+                        <br />
+                        The association is also dedicated to supporting its schools through financial assistance, infrastructure improvements, and scholarship programs.
+                        <br />
+                        By pooling resources and influence, members champion educational initiatives, support teaching excellence, and contribute to the broader education sector's growth.
+                    </p>
+                </div>
+            </section>
+
+            {/* Vision and Mission Section */}
+            <section className="py-16 bg-gray-100">
+                <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:space-x-8 px-6">
+                    <div className="w-full lg:w-1/2">
+                        <h2 className="text-4xl font-semibold text-purple-500 mb-4">Our Vision</h2>
+                        <p className="text-lg text-gray-700 leading-relaxed">
+                            "To create a strong community of past students who support each other and give back to their schools, helping future generations succeed."
+                        </p>
+                    </div>
+                    <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
+                        <h2 className="text-4xl font-semibold text-indigo-500 mb-4">Our Mission</h2>
+                        <p className="text-lg text-gray-700 leading-relaxed">
+                            "To connect alumni and offer support through mentorship, career guidance, and networking. We aim to give back to our schools with financial help, improved facilities, and scholarships, ensuring they remain great places for learning."
+                        </p>
+                    </div>
+                </div>
             </section>
 
             {/* What We Do Section */}
-            <section className="mb-16">
-                <h2 className="text-4xl font-semibold text-center text-indigo-500 mb-6">What We Do</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <div className="bg-gray-800 rounded-2xl p-6 transition-transform hover:scale-105 shadow-lg">
-                        <FaLaptopCode className="text-purple-400 text-5xl mx-auto mb-4" />
-                        <h3 className="text-xl font-bold mb-2 text-white">Development</h3>
-                        <p className="text-gray-300">
+            <section className="py-16 bg-white">
+                <h2 className="mb-6 text-4xl font-semibold text-center text-indigo-500">What We Do</h2>
+                <div className="grid grid-cols-1 gap-8 text-center sm:grid-cols-2 lg:grid-cols-4 px-6 max-w-6xl mx-auto">
+                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                        <FaLaptopCode className="mx-auto mb-4 text-5xl text-purple-400" />
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Development</h3>
+                        <p className="text-gray-600">
                             We provide cutting-edge software development solutions to address complex business needs.
                         </p>
                     </div>
-                    <div className="bg-gray-800 rounded-2xl p-6 transition-transform hover:scale-105 shadow-lg">
-                        <FaPeopleCarry className="text-indigo-400 text-5xl mx-auto mb-4" />
-                        <h3 className="text-xl font-bold mb-2 text-white">Consulting</h3>
-                        <p className="text-gray-300">
+                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                        <FaPeopleCarry className="mx-auto mb-4 text-5xl text-indigo-400" />
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Consulting</h3>
+                        <p className="text-gray-600">
                             Our consulting services ensure that your organization can overcome any challenges.
                         </p>
                     </div>
-                    <div className="bg-gray-800 rounded-2xl p-6 transition-transform hover:scale-105 shadow-lg">
-                        <FaBullhorn className="text-pink-400 text-5xl mx-auto mb-4" />
-                        <h3 className="text-xl font-bold mb-2 text-white">Marketing</h3>
-                        <p className="text-gray-300">
+                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                        <FaBullhorn className="mx-auto mb-4 text-5xl text-pink-400" />
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Marketing</h3>
+                        <p className="text-gray-600">
                             We create impactful marketing strategies to grow your brand and reach a wider audience.
                         </p>
                     </div>
-                    <div className="bg-gray-800 rounded-2xl p-6 transition-transform hover:scale-105 shadow-lg">
-                        <FaRegSmileBeam className="text-green-400 text-5xl mx-auto mb-4" />
-                        <h3 className="text-xl font-bold mb-2 text-white">Support</h3>
-                        <p className="text-gray-300">
+                    <div className="p-6 transition-transform bg-gray-50 shadow-lg rounded-2xl hover:scale-105">
+                        <FaRegSmileBeam className="mx-auto mb-4 text-5xl text-green-400" />
+                        <h3 className="mb-2 text-xl font-bold text-gray-800">Support</h3>
+                        <p className="text-gray-600">
                             Our team provides dedicated support to ensure seamless service for our clients.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Benefits Section */}
-            <section className="text-center mb-16">
-                <h2 className="text-4xl font-semibold text-pink-500 mb-6">Benefits</h2>
-                <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                    We believe in providing our clients with tangible value. Our team focuses on quality, reliability, and
-                    innovation to ensure the best results.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
-                        <h3 className="text-2xl font-bold text-white mb-2">High Quality</h3>
-                        <p className="text-gray-300">We deliver products and services of unmatched quality.</p>
-                    </div>
-                    <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
-                        <h3 className="text-2xl font-bold text-white mb-2">Customer Support</h3>
-                        <p className="text-gray-300">Round-the-clock support for our clients.</p>
-                    </div>
-                    <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
-                        <h3 className="text-2xl font-bold text-white mb-2">Innovation</h3>
-                        <p className="text-gray-300">We are committed to pioneering solutions that push boundaries.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Our Work Section */}
-            <section className="text-center mb-16">
-                <h2 className="text-4xl font-semibold text-green-500 mb-6">Our Work</h2>
-                <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    Our projects have empowered organizations worldwide to excel. We are committed to excellence in every
-                    step, ensuring high-quality results for all our clients.
-                </p>
-                <div className="mt-8">
-                    <img
-                        src={workImage}
-                        alt="Our Work"
-                        className="w-full h-64 object-cover rounded-2xl shadow-lg transition-transform hover:scale-105"
-                    />
-                </div>
-            </section>
-
             {/* Our Team Section */}
-            <section className="text-center mb-16">
-                <h2 className="text-4xl font-semibold text-yellow-500 mb-10">Our Team</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <section className="py-16 bg-gray-100 text-center">
+                <h2 className="mb-10 text-4xl font-semibold text-yellow-500">Our Team</h2>
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 px-6 max-w-6xl mx-auto">
                     {teamMembers.map((member) => (
                         <div
                             key={member.id}
                             onClick={() => openModal(member)}
-                            className="bg-gray-800 rounded-2xl p-6 shadow-lg transition-transform hover:scale-105 cursor-pointer"
+                            className="p-6 transition-transform bg-white shadow-lg cursor-pointer rounded-2xl hover:scale-105"
                         >
                             <img
                                 src={member.image}
                                 alt={member.name}
-                                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                                className="object-cover w-32 h-32 mx-auto mb-4 rounded-full"
                             />
-                            <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                            <p className="text-gray-400">{member.position}</p>
+                            <h3 className="mb-1 text-xl font-bold text-gray-800">{member.name}</h3>
+                            <p className="text-gray-500">{member.position}</p>
                         </div>
                     ))}
                 </div>
@@ -185,10 +173,10 @@ const AboutUs = () => {
 
             {/* Modal for Team Member Details */}
             {selectedMember && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-                    <div className="bg-gray-900 rounded-2xl p-8 w-11/12 sm:w-96 relative">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+                    <div className="relative w-11/12 p-8 bg-white rounded-2xl sm:w-96 shadow-2xl">
                         <button
-                            className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl"
+                            className="absolute text-2xl text-gray-400 top-4 right-4 hover:text-gray-600"
                             onClick={closeModal}
                         >
                             <FaTimes />
@@ -197,11 +185,11 @@ const AboutUs = () => {
                             <img
                                 src={selectedMember.image}
                                 alt={selectedMember.name}
-                                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                                className="object-cover w-32 h-32 mx-auto mb-4 rounded-full"
                             />
-                            <h3 className="text-3xl font-bold text-white mb-2">{selectedMember.name}</h3>
-                            <p className="text-gray-400 text-lg mb-2">{selectedMember.position}</p>
-                            <p className="text-gray-300 mb-6">{selectedMember.description}</p>
+                            <h3 className="mb-2 text-3xl font-bold text-gray-800">{selectedMember.name}</h3>
+                            <p className="mb-2 text-lg text-gray-500">{selectedMember.position}</p>
+                            <p className="mb-6 text-gray-600">{selectedMember.description}</p>
                             <div className="flex justify-center space-x-6 text-gray-400">
                                 <a href={selectedMember.facebook} target="_blank" rel="noopener noreferrer">
                                     <FaFacebook className="text-2xl hover:text-blue-500" />

@@ -53,7 +53,7 @@ const ClientGallery = () => {
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100">
+        <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white text-gray-800">
             {/* Hero Section with 3D Parallax and Animated Gradient Overlay */}
             <div className="relative h-72 md:h-96 overflow-hidden">
                 <div
@@ -65,10 +65,10 @@ const ClientGallery = () => {
                         filter: 'blur(10px)',
                     }}
                 ></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-800 via-indigo-800 to-blue-900 opacity-80 animate-gradient-slow"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-200 opacity-80"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center space-y-2">
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg animate-fade-in">Gallery</h1>
-                    <p className="text-gray-300 text-base md:text-lg tracking-wider">Home / Gallery</p>
+                    <h1 className="text-5xl md:text-6xl font-extrabold text-gray-800 drop-shadow-lg">Gallery</h1>
+                    <p className="text-gray-600 text-base md:text-lg tracking-wider">Home / Gallery</p>
                 </div>
             </div>
 
@@ -89,8 +89,8 @@ const ClientGallery = () => {
                                             alt={image.title}
                                             className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300 rounded-lg"
                                         />
-                                        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                            <p className="text-white text-lg font-semibold">{image.title}</p>
+                                        <div className="absolute inset-0 bg-gray-50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <p className="text-gray-800 text-lg font-semibold">{image.title}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -109,26 +109,26 @@ const ClientGallery = () => {
                     onRequestClose={closeModal}
                     contentLabel="Image Modal"
                     className={`${
-                        isFullscreen ? 'fixed inset-0 bg-black' : 'bg-gray-900 rounded-lg p-6 w-11/12 max-w-5xl mx-auto mt-20 shadow-2xl'
+                        isFullscreen ? 'fixed inset-0 bg-white' : 'bg-gray-100 rounded-lg p-6 w-11/12 max-w-5xl mx-auto mt-20 shadow-2xl'
                     } transition-all duration-300 overflow-hidden`}
-                    overlayClassName="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center"
+                    overlayClassName="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center"
                 >
                     <button
                         onClick={closeModal}
-                        className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl"
+                        className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
                     >
                         <FaTimes />
                     </button>
                     <button
                         onClick={toggleFullscreen}
-                        className="absolute top-4 right-16 text-white hover:text-gray-300 text-2xl"
+                        className="absolute top-4 right-16 text-gray-500 hover:text-gray-700 text-2xl"
                     >
                         <FaExpand />
                     </button>
                     <div className="flex items-center justify-between">
                         <button
                             onClick={goToPreviousImage}
-                            className="text-white hover:text-gray-300 text-3xl p-2"
+                            className="text-gray-500 hover:text-gray-700 text-3xl p-2"
                         >
                             <FaChevronLeft />
                         </button>
@@ -139,12 +139,12 @@ const ClientGallery = () => {
                         />
                         <button
                             onClick={goToNextImage}
-                            className="text-white hover:text-gray-300 text-3xl p-2"
+                            className="text-gray-500 hover:text-gray-700 text-3xl p-2"
                         >
                             <FaChevronRight />
                         </button>
                     </div>
-                    <p className="text-center mt-4 text-lg font-medium text-white">
+                    <p className="text-center mt-4 text-lg font-medium text-gray-700">
                         {images[currentImageIndex].title}
                     </p>
 
@@ -156,7 +156,7 @@ const ClientGallery = () => {
                                 src={`http://localhost:5000${img.url}`}
                                 alt={img.title}
                                 className={`w-16 h-16 object-cover rounded cursor-pointer transition-transform duration-200 ${
-                                    idx === currentImageIndex ? 'border-2 border-purple-500 scale-110' : 'border border-gray-500'
+                                    idx === currentImageIndex ? 'border-2 border-purple-500 scale-110' : 'border border-gray-300'
                                 } hover:scale-110`}
                                 onClick={() => setCurrentImageIndex(idx)}
                             />
