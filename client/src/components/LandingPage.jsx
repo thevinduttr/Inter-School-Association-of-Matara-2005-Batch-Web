@@ -21,6 +21,7 @@ import schoolLogo4 from '../assets/sujatha.png';
 import schoolLogo5 from '../assets/servatius.jpg';
 import schoolLogo6 from '../assets/covent.webp';
 import schoolLogo7 from '../assets/girls.jpg';
+
 import img1 from "../assets/img13.jpg"
 import img2 from "../assets/img16.jpg"
 import img3 from "../assets/img2.jpg"
@@ -30,13 +31,13 @@ Modal.setAppElement('#root'); // Accessibility setting for react-modal
 
 const LandingPage = () => {
     const [schools] = useState([
-        { id: 1, name: 'Matara Central College', logoUrl: schoolLogo1, description: 'An institution known for excellence.', anthemUrl: '/path/to/anthem1.mp3' },
-        { id: 2, name: 'St. Thomas College Matara', logoUrl: schoolLogo2, description: 'Educating tomorrow’s leaders.', anthemUrl: '/path/to/anthem2.mp3' },
         { id: 3, name: 'Rahula College', logoUrl: schoolLogo3, description: 'Striving for greatness in all fields.', anthemUrl: '/path/to/anthem3.mp3' },
-        { id: 4, name: 'Sujatha Vidyalaya', logoUrl: schoolLogo4, description: 'Empowering young minds.', anthemUrl: '/path/to/anthem4.mp3' },
+        { id: 2, name: 'St. Thomas College Matara', logoUrl: schoolLogo2, description: 'Educating tomorrow’s leaders.', anthemUrl: '/path/to/anthem2.mp3' },
+        { id: 1, name: 'Matara Central College', logoUrl: schoolLogo1, description: 'An institution known for excellence.', anthemUrl: '/path/to/anthem1.mp3' },
         { id: 5, name: 'St.servatius collegeMatara', logoUrl: schoolLogo5, description: 'Science and innovation for a brighter future.', anthemUrl: '/path/to/anthem5.mp3' },
+        { id: 4, name: 'Sujatha Vidyalaya', logoUrl: schoolLogo4, description: 'Empowering young minds.', anthemUrl: '/path/to/anthem4.mp3' },
         { id: 6, name: 'St. Mary’s College', logoUrl: schoolLogo6, description: 'Faith, learning, and leadership.', anthemUrl: '/path/to/anthem6.mp3' },
-        { id: 7, name: 'St thomas girls high school matara', logoUrl: schoolLogo7, description: 'Inspiring young women to achieve greatness.', anthemUrl: '/path/to/anthem7.mp3' },
+        { id: 7, name: 'St Thomas Girls High School', logoUrl: schoolLogo7, description: 'Inspiring young women to achieve greatness.', anthemUrl: '/path/to/anthem7.mp3' },
     ]);
 
     const [projects, setProjects] = useState([]);
@@ -156,7 +157,7 @@ const LandingPage = () => {
                             onClick={() => openModal(school)}
                         >
                             <div className="flex flex-col items-center justify-center h-full">
-                                <img src={school.logoUrl} alt={school.name} className="object-cover w-20 h-20 mb-4 rounded-full" />
+                                <img src={school.logoUrl} alt={school.name} className="object-cover w-20 h-20 mb-4" />
                                 <h3 className="mb-2 text-xl font-semibold">{school.name}</h3>
                                 <p className="text-sm leading-tight text-gray-600">Learn more about our esteemed alumni network.</p>
                             </div>
@@ -213,7 +214,11 @@ const LandingPage = () => {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {(upcomingEvents.length > 0 ? upcomingEvents : pastEvents.slice(0, 4)).map((event) => (
                         <div key={event._id} className="p-6 text-center transition transform bg-gray-100 rounded-lg shadow-lg hover:scale-105">
-                            <img src={event.imageUrl} alt={event.title} className="object-cover w-full h-48 mb-4 rounded-md" />
+                            <img 
+                                src={`http://localhost:5000${event.imageUrl}`} 
+                                alt={event.title} 
+                                className="object-cover w-full h-48 mb-4 rounded-md" 
+                            />
                             <h3 className="mb-3 text-2xl font-semibold">{event.title}</h3>
                             <p className="mb-4 text-lg text-gray-700">{event.description}</p>
                             {upcomingEvents.length > 0 && <Countdown date={new Date(event.date)} renderer={renderCountdown} />}
@@ -225,6 +230,7 @@ const LandingPage = () => {
                 </div>
             </section>
 
+
             {/* Support Our Association Section (Enhanced Layout) */}
             <section className="container relative px-4 py-20 mx-auto overflow-hidden text-white bg-gray-900">
                 <h2 className="mb-8 text-4xl font-bold text-center">Support Our Association</h2>
@@ -232,7 +238,7 @@ const LandingPage = () => {
                 
                 <div className="relative z-10 flex flex-col items-center justify-center gap-12 p-8 bg-gray-800 rounded-lg shadow-xl md:flex-row">
                     <div className="flex flex-col items-center">
-                        <img src={qrCodeImage} alt="QR Code" className="w-56 h-56 mb-4 transition-transform transform rounded-lg shadow-lg hover:scale-105" />
+                        <img src={qrCodeImage} alt="QR Code" className="w-56 h-56 mb-4 transition-transform transform rounded-lg shadow-lg hover:scale-105 bg-gray-100" />
                         <p className="text-sm text-center text-gray-400">Scan the QR code to donate</p>
                     </div>
                     
