@@ -7,6 +7,8 @@ import heroBackground from '../assets/hero-background.jpg';
 import eventImage from '../assets/event-preview.jpg';
 import testimonialImage from '../assets/testimonial.jpg';
 import galleryPreviewImage from '../assets/gallery-preview.jpg';
+import img1 from "../assets/logo.jpg"
+
 
 const LandingPage = () => {
     const calculateCountdown = () => {
@@ -35,26 +37,26 @@ const LandingPage = () => {
     };
 
     return (
-        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100 min-h-screen">
+        <div className="min-h-screen text-gray-100 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
             {/* Hero Section */}
             <motion.section
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="relative h-screen flex flex-col items-center justify-center text-center bg-cover bg-center"
+                className="relative flex flex-col items-center justify-center h-screen text-center bg-center bg-cover"
                 style={{ backgroundImage: `url(${heroBackground})` }}
             >
                 <div className="absolute inset-0 bg-black opacity-70"></div>
                 <div className="relative z-10 max-w-2xl px-6">
-                    <h1 className="text-5xl font-extrabold text-white mb-4 drop-shadow-lg animate-fade-in">
+                    <h1 className="mb-4 text-5xl font-extrabold text-white drop-shadow-lg animate-fade-in">
                         Welcome to the Inter-School Association
                     </h1>
-                    <p className="text-lg text-gray-300 mb-8">
+                    <p className="mb-8 text-lg text-gray-300">
                         Uniting students and educators from various schools to foster collaboration, learning, and excellence.
                     </p>
                     <Link
                         to="/about"
-                        className="px-8 py-4 text-lg font-semibold bg-purple-600 text-white rounded-lg shadow-lg hover:bg-purple-700 transition duration-300"
+                        className="px-8 py-4 text-lg font-semibold text-white transition duration-300 bg-purple-600 rounded-lg shadow-lg hover:bg-purple-700"
                     >
                         Join the Association
                     </Link>
@@ -64,7 +66,7 @@ const LandingPage = () => {
             {/* Stats Section */}
             <section className="py-16 bg-gray-800">
                 <motion.div
-                    className="max-w-5xl mx-auto text-center grid grid-cols-2 md:grid-cols-4 gap-8 text-white"
+                    className="grid max-w-5xl grid-cols-2 gap-8 mx-auto text-center text-white md:grid-cols-4"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -76,7 +78,7 @@ const LandingPage = () => {
                     {[{ label: "Growth Rate", value: "300%" }, { label: "Venues", value: "200+" }, { label: "Years", value: "2+" }, { label: "Users", value: "20,000+" }].map((stat, index) => (
                         <motion.div key={index} variants={fadeIn}>
                             <h3 className="text-4xl font-bold text-blue-400">{stat.value}</h3>
-                            <p className="text-gray-300 mt-2">{stat.label}</p>
+                            <p className="mt-2 text-gray-300">{stat.label}</p>
                         </motion.div>
                     ))}
                 </motion.div>
@@ -84,14 +86,14 @@ const LandingPage = () => {
 
             {/* Countdown Section */}
             <motion.section
-                className="py-16 px-6 text-center bg-gray-900"
+                className="px-6 py-16 text-center bg-gray-900"
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
             >
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-bold text-purple-500 mb-6">Countdown to Next Big Event</h2>
-                    <div className="flex justify-center space-x-8 text-white text-2xl font-semibold">
+                    <h2 className="mb-6 text-4xl font-bold text-purple-500">Countdown to Next Big Event</h2>
+                    <div className="flex justify-center space-x-8 text-2xl font-semibold text-white">
                         {Object.keys(countdown).map((unit, index) => (
                             <div key={index} className="text-center">
                                 <p>{countdown[unit]}</p>
@@ -103,7 +105,7 @@ const LandingPage = () => {
             </motion.section>
 
             {/* About Section */}
-            <section className="py-16 px-6">
+            <section className="px-6 py-16">
                 <motion.div
                     className="max-w-5xl mx-auto text-center"
                     initial="hidden"
@@ -111,13 +113,23 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     variants={fadeIn}
                 >
-                    <h2 className="text-4xl font-bold text-purple-500 mb-6">About Us</h2>
-                    <p className="text-lg text-gray-300 leading-relaxed">
-                        The Inter-School Association is dedicated to fostering relationships between schools through joint events, academic collaborations, and sports tournaments. Our mission is to create opportunities for students and educators alike to collaborate, learn, and grow.
+                    <h2 className="mb-6 text-4xl font-bold text-purple-500">About Us</h2>
+                    <div className="flex items-center ">
+                        <img className="w-[350px] h-[320px] mx-auto" src={img1} alt="" />
+                    </div>
+                
+                    <br />
+                    <p className="text-lg leading-relaxed text-gray-300">
+                    shared goal: to strengthen connections, support their former schools, and uphold the values of 
+                    their education.
+                    <br /> 
+                    The association’s primary objective is to build a supportive network for professional growth, 
+                    mentorship, and the exchange of knowledge among its members. This community fosters 
+                    collaboration and career guidance, enriching members’ personal and professional lives. 
                     </p>
                     <Link
                         to="/about"
-                        className="mt-6 inline-block px-6 py-3 text-lg font-medium text-purple-500 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300"
+                        className="inline-block px-6 py-3 mt-6 text-lg font-medium text-purple-500 transition duration-300 bg-gray-800 rounded-lg hover:bg-gray-700"
                     >
                         Learn More About Us
                     </Link>
@@ -125,7 +137,7 @@ const LandingPage = () => {
             </section>
 
             {/* Upcoming Events Section */}
-            <section className="py-16 bg-gray-800 px-6">
+            <section className="px-6 py-16 bg-gray-800">
                 <motion.div
                     className="max-w-5xl mx-auto text-center"
                     initial="hidden"
@@ -133,8 +145,8 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     variants={fadeIn}
                 >
-                    <h2 className="text-4xl font-bold text-white mb-10">Upcoming Events</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <h2 className="mb-10 text-4xl font-bold text-white">Upcoming Events</h2>
+                    <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-2">
                         {[{ title: "Annual Science Fair", description: "Join us for the Annual Science Fair, where students showcase their innovative projects." },
                           { title: "Inter-School Debate", description: "Participate in our annual debate competition and engage in thought-provoking discussions." }]
                             .map((event, index) => (
@@ -142,13 +154,13 @@ const LandingPage = () => {
                                     <img
                                         src={eventImage}
                                         alt="Event Preview"
-                                        className="rounded-lg mb-4 w-full h-56 object-cover"
+                                        className="object-cover w-full h-56 mb-4 rounded-lg"
                                     />
-                                    <h3 className="text-2xl font-semibold text-purple-500 mb-2">{event.title}</h3>
-                                    <p className="text-gray-300 mb-4">{event.description}</p>
+                                    <h3 className="mb-2 text-2xl font-semibold text-purple-500">{event.title}</h3>
+                                    <p className="mb-4 text-gray-300">{event.description}</p>
                                     <Link
                                         to="/events"
-                                        className="text-purple-400 hover:text-purple-500 transition duration-300"
+                                        className="text-purple-400 transition duration-300 hover:text-purple-500"
                                     >
                                         Learn More
                                     </Link>
@@ -157,7 +169,7 @@ const LandingPage = () => {
                     </div>
                     <Link
                         to="/events"
-                        className="mt-8 inline-block text-lg font-medium text-purple-500 hover:text-purple-400 transition duration-300"
+                        className="inline-block mt-8 text-lg font-medium text-purple-500 transition duration-300 hover:text-purple-400"
                     >
                         View All Events
                     </Link>
@@ -165,7 +177,7 @@ const LandingPage = () => {
             </section>
 
             {/* Gallery Preview Section */}
-            <section className="py-16 px-6">
+            <section className="px-6 py-16">
                 <motion.div
                     className="max-w-5xl mx-auto text-center"
                     initial="hidden"
@@ -173,8 +185,8 @@ const LandingPage = () => {
                     viewport={{ once: true }}
                     variants={fadeIn}
                 >
-                    <h2 className="text-4xl font-bold text-purple-500 mb-6">Gallery Preview</h2>
-                    <p className="text-lg text-gray-300 mb-10">
+                    <h2 className="mb-6 text-4xl font-bold text-purple-500">Gallery Preview</h2>
+                    <p className="mb-10 text-lg text-gray-300">
                         Get a glimpse of our latest work. Dive into our full gallery to experience the complete collection.
                     </p>
                     <div className="flex justify-center">
@@ -182,9 +194,9 @@ const LandingPage = () => {
                             <motion.img
                                 src={galleryPreviewImage}
                                 alt="Gallery Preview"
-                                className="rounded-lg shadow-lg transition-transform duration-300 transform group-hover:scale-105"
+                                className="transition-transform duration-300 transform rounded-lg shadow-lg group-hover:scale-105"
                             />
-                            <p className="mt-4 text-lg text-purple-500 group-hover:text-purple-400 transition duration-300">
+                            <p className="mt-4 text-lg text-purple-500 transition duration-300 group-hover:text-purple-400">
                                 View Full Gallery
                             </p>
                         </Link>
@@ -193,50 +205,28 @@ const LandingPage = () => {
             </section>
 
             {/* Call to Action */}
-            <section className="py-16 bg-purple-700 px-6 text-center">
+            <section className="px-6 py-16 text-center bg-purple-700">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-4xl font-bold text-white mb-6"
+                    className="mb-6 text-4xl font-bold text-white"
                 >
                     Become a Member
                 </motion.h2>
-                <p className="text-lg text-gray-200 mb-8 max-w-3xl mx-auto">
+                <p className="max-w-3xl mx-auto mb-8 text-lg text-gray-200">
                     Join the Inter-School Association to access exclusive resources, participate in events, and connect with peers from other schools. Together, we can make a difference.
                 </p>
                 <Link
                     to="/membership"
-                    className="px-8 py-4 text-lg font-semibold bg-white text-purple-700 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300"
+                    className="px-8 py-4 text-lg font-semibold text-purple-700 transition duration-300 bg-white rounded-lg shadow-lg hover:bg-gray-200"
                 >
                     Join Us Now
                 </Link>
             </section>
 
             {/* Footer Section */}
-            <footer className="bg-gray-800 py-10">
-                <div className="container mx-auto text-center">
-                    <h3 className="text-2xl font-semibold text-purple-500 mb-4">Connect with Us</h3>
-                    <p className="text-gray-300 mb-6">
-                        Follow us on social media to stay updated with our latest events and news.
-                    </p>
-                    <div className="flex justify-center space-x-6 mb-6">
-                        {[FaFacebook, FaInstagram, FaTwitter, FaLinkedin].map((Icon, index) => (
-                            <motion.a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                key={index}
-                                whileHover={{ scale: 1.2 }}
-                                className="text-gray-400 hover:text-blue-500 transition duration-300 text-2xl"
-                            >
-                                <Icon />
-                            </motion.a>
-                        ))}
-                    </div>
-                    <p className="text-gray-500 text-sm">&copy; 2024 Inter-School Association. All rights reserved.</p>
-                </div>
-            </footer>
+            
         </div>
     );
 };
