@@ -78,6 +78,9 @@ const LandingPage = () => {
         setSelectedSchool(null);
     };
 
+    const handleModalOpen = () => setIsModalOpen(true);
+    const handleModalClose = () => setIsModalOpen(false);
+
     // Determine upcoming and past events
     const currentDate = new Date();
     const upcomingEvents = projects.filter(event => new Date(event.date) > currentDate);
@@ -97,6 +100,7 @@ const LandingPage = () => {
             );
         }
     };
+    
 
     return (
         <div className="min-h-screen text-white">
@@ -104,12 +108,52 @@ const LandingPage = () => {
             <section className="relative h-screen bg-center bg-cover" style={{ backgroundImage: `url(${heroImage})` }}>
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70">
                     <div className="px-4 text-center md:px-10 lg:px-20">
-                        <h1 className="mb-6 text-5xl font-bold text-white md:text-7xl drop-shadow-lg">Inter School Association - Matara 2005 Batch</h1>
-                        <p className="mb-8 text-lg text-gray-300 md:text-2xl">Connecting the Batch of 2005 across Schools in Matara</p>
-                        <Link to="/register" className="px-6 py-3 text-lg font-semibold text-black transition bg-white rounded-lg hover:bg-gray-300">Join Us</Link>
+                        <h1 className="mb-6 text-5xl font-bold text-white md:text-7xl drop-shadow-lg">
+                            Inter School Association - Matara 2005 Batch
+                        </h1>
+                        <p className="mb-8 text-lg text-gray-300 md:text-2xl">
+                            Connecting the Batch of 2005 across Schools in Matara
+                        </p>
+                        <button onClick={handleModalOpen} className="px-6 py-3 text-lg font-semibold text-black transition bg-white rounded-lg hover:bg-gray-300">
+                            Join Us
+                        </button>
                     </div>
                 </div>
             </section>
+
+            {/* Contact Modal */}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="relative w-full max-w-lg p-6 mx-auto bg-white rounded-lg shadow-lg md:max-w-2xl">
+                        <button onClick={handleModalClose} className="absolute top-4 right-4 text-gray-600 hover:text-black">
+                            ✕
+                        </button>
+                        <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">Contact Us</h2>
+                        <p className="mb-6 text-center text-gray-600">Feel free to reach out to us through any of the following:</p>
+                        <div className="space-y-4 text-gray-700">
+                            <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
+                                <span className="text-lg font-medium">Email</span>
+                                <a href="mailto:example@example.com" className="text-blue-600 hover:underline">example@example.com</a>
+                            </div>
+                            <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
+                                <span className="text-lg font-medium">WhatsApp</span>
+                                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                    +123 456 7890
+                                </a>
+                            </div>
+                            <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
+                                <span className="text-lg font-medium">Phone</span>
+                                <a href="tel:+1234567890" className="text-blue-600 hover:underline">+123 456 7890</a>
+                            </div>
+                        </div>
+                        <div className="mt-6 text-center">
+                            <button onClick={handleModalClose} className="px-6 py-2 font-semibold text-white transition bg-gray-800 rounded-lg hover:bg-gray-700">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Count Row Section (White) */}
             <section className="container px-4 py-10 mx-auto text-black bg-white">
@@ -131,7 +175,7 @@ const LandingPage = () => {
                             <FaSchool className="mx-auto mb-3 text-4xl text-gray-700" />
                             <p className="text-lg font-semibold">Schools</p>
                             <p className="text-3xl font-bold">
-                                <CountUp end={15} duration={3} />+
+                                <CountUp end={7} duration={3} />+
                             </p>
                         </div>
                         <div className="p-4">
@@ -244,9 +288,9 @@ const LandingPage = () => {
                     
                     <div className="max-w-md text-lg leading-relaxed text-gray-300">
                         <h3 className="mb-4 text-2xl font-bold text-purple-500">Bank Transfer Details</h3>
-                        <p className="mb-1"><span className="font-semibold text-white">Bank:</span> ABC Bank</p>
-                        <p className="mb-1"><span className="font-semibold text-white">Account Name:</span> Inter School Association - Matara 2005 Batch</p>
-                        <p className="mb-1"><span className="font-semibold text-white">Account Number:</span> 123456789</p>
+                        <p className="mb-1"><span className="font-semibold text-white">Bank:</span> Sampath Bank</p>
+                        <p className="mb-1"><span className="font-semibold text-white">Account Name:</span> Matara Inter School Society - Batch 2005</p>
+                        <p className="mb-1"><span className="font-semibold text-white">Account Number:</span> 1010 6100 6532</p>
                         <p><span className="font-semibold text-white">Branch:</span> Matara Branch</p>
                     </div>
                 </div>
