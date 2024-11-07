@@ -29,7 +29,8 @@ const Footer = () => {
                     </motion.a>
                 ))}
             </div>
-            <p className="text-sm text-gray-500">&copy; 2024 Inter-School Association. All rights reserved.</p>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-600 lg:my-8" />
+            <span class="block text-sm text-gray-400 sm:text-center dark:text-gray-300">© 2024 <a href="https://nexcodia.com/" class="hover:underline">NexCodia Software Solutions</a>. All Rights Reserved.</span>
         </div>
     </footer>
     );
