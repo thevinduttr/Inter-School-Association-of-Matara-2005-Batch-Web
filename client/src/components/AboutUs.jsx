@@ -3,52 +3,61 @@ import React, { useState } from 'react';
 import { FaRegSmileBeam, FaLaptopCode, FaPeopleCarry, FaBullhorn, FaFacebook, FaWhatsapp, FaInstagram, FaTimes } from 'react-icons/fa';
 import contactBanner from '../assets/contact-banner.jpg';
 import teamImage1 from '../assets/member1.jpg';
-import teamImage2 from '../assets/member2.jpg';
-import teamImage3 from '../assets/member3.jpg';
-import teamImage4 from '../assets/member4.jpg';
-import workImage from '../assets/member4.jpg';
+import teamImage2 from '../assets/team2.jpg';
+import teamImage3 from '../assets/team4.jpg';
+import teamImage4 from '../assets/team1.jpg';
+import teamImage5 from '../assets/team3.jpg';
+import teamImage6 from '../assets//team5.jpg';
+import workImage from '../assets/team5.jpg';
 import img1 from "../assets/logo.jpg";
 
 const teamMembers = [
     {
         id: 1,
-        name: "John Doe",
+        name: "Ravindu Priyanath Runage ",
         position: "President",
         image: teamImage1,
-        description: "John has over 20 years of experience in leadership and is committed to steering the team towards success.",
-        facebook: "https://facebook.com",
-        whatsapp: "https://wa.me/123456789",
-        instagram: "https://instagram.com",
+        description: "Managing Director – Rathna Producers Cinnamon Exports (Pvt) Ltd ",
     },
     {
         id: 2,
-        name: "Jane Smith",
+        name: "Priyankara Sureka ",
         position: "Vice President",
         image: teamImage2,
-        description: "Jane excels in operational strategy, ensuring that every project is executed smoothly and efficiently.",
-        facebook: "https://facebook.com",
-        whatsapp: "https://wa.me/123456789",
-        instagram: "https://instagram.com",
+        description: "Director – Heyleys Agriculture Holdings Ltd.  ",
+        
     },
     {
         id: 3,
-        name: "Mark Lee",
+        name: "Dhanushka Namal ",
         position: "Treasurer",
         image: teamImage3,
-        description: "With a keen eye for detail, Mark oversees the financial aspects of our projects, ensuring budget alignment and sustainability.",
-        facebook: "https://facebook.com",
-        whatsapp: "https://wa.me/123456789",
-        instagram: "https://instagram.com",
+        description: "Marketing Executive – Sri Lanka Insurance ",
+       
     },
     {
         id: 4,
-        name: "Sara Johnson",
+        name: "Chathuri Alawatta ",
         position: "Secretary",
         image: teamImage4,
-        description: "Sara ensures seamless communication within the team and with our clients, maintaining a structured workflow.",
-        facebook: "https://facebook.com",
-        whatsapp: "https://wa.me/123456789",
-        instagram: "https://instagram.com",
+        description: "Accountant – Manamperi Hardware Stores  ",
+       
+    },
+    {
+        id: 5,
+        name: "Hasika Vithanage  ",
+        position: "Vice Secretary",
+        image: teamImage5,
+        description: "St. Marys Convent - Matara",
+       
+    },
+    {
+        id: 6,
+        name: "Gishan Sri Lankeshwara ",
+        position: "Chief Organizer ",
+        image: teamImage6,
+        description: "Owner – GISH Master of Jewelers  ",
+       
     },
 ];
 
@@ -82,16 +91,28 @@ const AboutUs = () => {
             <section className="py-16 text-center bg-white">
                 <h2 className="mb-6 text-4xl font-semibold text-purple-600">Who We Are</h2>
                 <div className="flex flex-col items-center max-w-6xl p-4 mx-auto lg:flex-row lg:items-center lg:space-x-8">
-                    <img className="w-[400px] h-[380px] mx-auto lg:mx-0 lg:w-[350px] lg:h-[350px] rounded-lg shadow-lg" src={img1} alt="Logo" />
-                    <p className="max-w-4xl mx-auto mt-6 text-lg leading-relaxed text-gray-700 lg:mt-0">
-                        Shared goal: to strengthen connections, support their former schools, and uphold the values of their education.
-                        <br />
-                        The association’s primary objective is to build a supportive network for professional growth, mentorship, and the exchange of knowledge among its members.
-                        This community fosters collaboration and career guidance, enriching members’ personal and professional lives.
-                        <br />
-                        The association is also dedicated to supporting its schools through financial assistance, infrastructure improvements, and scholarship programs.
-                        <br />
-                        By pooling resources and influence, members champion educational initiatives, support teaching excellence, and contribute to the broader education sector's growth.
+                    <img className="w-[400px] h-[380px] mx-auto lg:mx-0 lg:w-[450px] lg:h-[350px] rounded-lg shadow-lg" src={img1} alt="Logo" />
+                    <p className="max-w-4xl mx-auto mt-6 mb-5 text-lg leading-relaxed text-gray-700 lg:mt-0">
+                    The Inter School Association, founded in November 2023, is a collective initiative bringing 
+                    together seven prestigious schools under a shared mission of promoting well-being and 
+                    fostering collaboration. This unique organization is led and conducted by the dedicated past 
+                    pupils of these institutions, who strive to give back to their alma maters and communities 
+                    through impactful initiatives.  
+                    <br  />
+                    The association is built on the principles of unity, mutual respect, and a commitment to 
+                    creating opportunities for personal and academic growth. By leveraging the collective 
+                    influence and resources of its members, the Inter School Association actively champions 
+                    educational causes. Its primary focus is to address the diverse needs of students, enhance 
+                    their learning environments, and support their holistic development.  
+                    <br />
+                    The Inter School Association serves as a platform for innovation and progress, encouraging 
+                    cooperation among schools to tackle common challenges and celebrate shared successes. 
+                    With a strong emphasis on teamwork and community service, it seeks to inspire a culture of 
+                    giving and development that benefits not only the member schools but also the wider 
+                    community. 
+                    <br />
+                    Through its vision and purpose, the Inter School Association aspires to become a model for 
+                    collaborative efforts in education, leaving a lasting legacy of positive change. 
                     </p>
                 </div>
             </section>
@@ -190,7 +211,7 @@ const AboutUs = () => {
                             <h3 className="mb-2 text-3xl font-bold text-gray-800">{selectedMember.name}</h3>
                             <p className="mb-2 text-lg text-gray-500">{selectedMember.position}</p>
                             <p className="mb-6 text-gray-600">{selectedMember.description}</p>
-                            <div className="flex justify-center space-x-6 text-gray-400">
+                            {/* <div className="flex justify-center space-x-6 text-gray-400">
                                 <a href={selectedMember.facebook} target="_blank" rel="noopener noreferrer">
                                     <FaFacebook className="text-2xl hover:text-blue-500" />
                                 </a>
@@ -200,7 +221,7 @@ const AboutUs = () => {
                                 <a href={selectedMember.instagram} target="_blank" rel="noopener noreferrer">
                                     <FaInstagram className="text-2xl hover:text-pink-500" />
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

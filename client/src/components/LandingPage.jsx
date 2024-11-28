@@ -10,7 +10,7 @@ import Countdown from 'react-countdown';
 import Modal from 'react-modal';
 
 // Importing images
-import heroImage from '../assets/banner1.jpg';
+import heroImage from '../assets/project5.jpg';
 import visionImage from '../assets/vision.png';
 import missionImage from '../assets/misson.png';
 import qrCodeImage from '../assets/qr.webp';
@@ -33,8 +33,8 @@ const LandingPage = () => {
     const [schools] = useState([
         { id: 3, name: 'Rahula College', logoUrl: schoolLogo3, description: 'Striving for greatness in all fields.', anthemUrl: '/path/to/anthem3.mp3' },
         { id: 2, name: 'St. Thomas College Matara', logoUrl: schoolLogo2, description: 'Educating tomorrow’s leaders.', anthemUrl: '/path/to/anthem2.mp3' },
-        { id: 1, name: 'Matara Central College', logoUrl: schoolLogo1, description: 'An institution known for excellence.', anthemUrl: '/path/to/anthem1.mp3' },
         { id: 5, name: 'St.servatius collegeMatara', logoUrl: schoolLogo5, description: 'Science and innovation for a brighter future.', anthemUrl: '/path/to/anthem5.mp3' },
+        { id: 1, name: 'Matara Central College', logoUrl: schoolLogo1, description: 'An institution known for excellence.', anthemUrl: '/path/to/anthem1.mp3' },  
         { id: 4, name: 'Sujatha Vidyalaya', logoUrl: schoolLogo4, description: 'Empowering young minds.', anthemUrl: '/path/to/anthem4.mp3' },
         { id: 6, name: 'St. Mary’s College', logoUrl: schoolLogo6, description: 'Faith, learning, and leadership.', anthemUrl: '/path/to/anthem6.mp3' },
         { id: 7, name: 'St Thomas Girls High School', logoUrl: schoolLogo7, description: 'Inspiring young women to achieve greatness.', anthemUrl: '/path/to/anthem7.mp3' },
@@ -125,7 +125,7 @@ const LandingPage = () => {
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="relative w-full max-w-lg p-6 mx-auto bg-white rounded-lg shadow-lg md:max-w-2xl">
-                        <button onClick={handleModalClose} className="absolute top-4 right-4 text-gray-600 hover:text-black">
+                        <button onClick={handleModalClose} className="absolute text-gray-600 top-4 right-4 hover:text-black">
                             ✕
                         </button>
                         <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">Contact Us</h2>
@@ -133,17 +133,17 @@ const LandingPage = () => {
                         <div className="space-y-4 text-gray-700">
                             <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
                                 <span className="text-lg font-medium">Email</span>
-                                <a href="mailto:example@example.com" className="text-blue-600 hover:underline">example@example.com</a>
+                                <a href="mailto:example@example.com" className="text-blue-600 hover:underline">isamc2005b@gmail.com </a>
                             </div>
                             <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
                                 <span className="text-lg font-medium">WhatsApp</span>
                                 <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                    +123 456 7890
+                                +94 779019696
                                 </a>
                             </div>
                             <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
                                 <span className="text-lg font-medium">Phone</span>
-                                <a href="tel:+1234567890" className="text-blue-600 hover:underline">+123 456 7890</a>
+                                <a href="tel:+1234567890" className="text-blue-600 hover:underline">+94 779019696 </a>
                             </div>
                         </div>
                         <div className="mt-6 text-center">
@@ -282,7 +282,7 @@ const LandingPage = () => {
                 
                 <div className="relative z-10 flex flex-col items-center justify-center gap-12 p-8 bg-gray-800 rounded-lg shadow-xl md:flex-row">
                     <div className="flex flex-col items-center">
-                        <img src={qrCodeImage} alt="QR Code" className="w-56 h-56 mb-4 transition-transform transform rounded-lg shadow-lg hover:scale-105 bg-gray-100" />
+                        <img src={qrCodeImage} alt="QR Code" className="w-56 h-56 mb-4 transition-transform transform bg-gray-100 rounded-lg shadow-lg hover:scale-105" />
                         <p className="text-sm text-center text-gray-400">Scan the QR code to donate</p>
                     </div>
                     
@@ -332,10 +332,10 @@ const LandingPage = () => {
                             Feel free to reach out to us for any inquiries, collaborations, or support for our association.
                         </p>
                         <p className="text-lg text-gray-600">
-                            Email: <a href="mailto:contact@matara2005association.com" className="text-purple-500 hover:underline">contact@matara2005association.com</a>
+                            Email: <a href="mailto:contact@matara2005association.com" className="text-purple-500 hover:underline">isamc2005b@gmail.com </a>
                         </p>
                         <p className="text-lg text-gray-600">
-                            Phone: <a href="tel:+94123456789" className="text-purple-500 hover:underline">+94 123 456 789</a>
+                            Phone: <a href="tel:+94123456789" className="text-purple-500 hover:underline">+94 779019696 </a>
                         </p>
 
                         <div className="flex justify-center">
