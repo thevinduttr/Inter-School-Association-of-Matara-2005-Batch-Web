@@ -253,7 +253,7 @@ const LandingPage = () => {
 
             {/* Upcoming Events with Images and Countdown (White) */}
             <section className="container px-4 py-16 mx-auto text-black bg-white">
-                <h2 className="mb-5 text-4xl font-bold text-center">Upcoming Events</h2>
+                <h2 className="mb-5 text-4xl font-bold text-center">Our Projects</h2>
                 <hr className="w-24 mx-auto mb-8 border-b-4 border-gray-500" />
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {(upcomingEvents.length > 0 ? upcomingEvents : pastEvents.slice(0, 4)).map((event) => (

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { FaRegSmileBeam, FaLaptopCode, FaPeopleCarry, FaBullhorn, FaFacebook, FaWhatsapp, FaInstagram, FaTimes } from 'react-icons/fa';
 import contactBanner from '../assets/contact-banner.jpg';
-import teamImage1 from '../assets/member1.jpg';
+import teamImage1 from '../assets/team6.jpg';
 import teamImage2 from '../assets/team2.jpg';
 import teamImage3 from '../assets/team4.jpg';
 import teamImage4 from '../assets/team1.jpg';
