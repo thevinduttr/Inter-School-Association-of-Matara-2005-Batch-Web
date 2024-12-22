@@ -7,6 +7,7 @@ import ClientProjects from './components/ClientProjects';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 
+import LoginPage from './components/admin/LoginPage';
 import GalleryManager from './components/admin/GalleryManager';
 import ProjectGallery from './components/admin/ProjectGallery';
 
@@ -50,6 +51,8 @@ function App() {
                     <Route path="/contact" element={<ContactUs />} />
                     <Route path="/about" element={<AboutUs />} />
                 </Route>
+
+                <Route path="/admin" element={<LoginPage />} />
 
                 {/* Admin routes with Sidebar layout */}
                 <Route element={<AdminLayout />}>

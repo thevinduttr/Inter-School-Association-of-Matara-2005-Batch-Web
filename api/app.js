@@ -5,6 +5,8 @@ const connectDB = require('./config');
 const galleryRoutes = require('./routes/galleryRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+const authRoutes = require('./routes/authRoutes');
+
 require('dotenv').config();
 
 const app = express();
@@ -16,6 +18,9 @@ connectDB();
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/uploads', express.static('uploads'));
+
+// Use auth routes
+app.use('/api', authRoutes);
 
 // Routes
 app.use('/api/gallery', galleryRoutes);
